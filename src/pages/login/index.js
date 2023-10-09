@@ -48,7 +48,7 @@ export const LoginPage = () => {
             goToPostsPage(navigate)
         } catch (e) {
             console.log(e)
-            /* alert(e.response.data) */
+            alert(e.response.data) 
         }
        
     } 

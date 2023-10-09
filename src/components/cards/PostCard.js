@@ -12,13 +12,14 @@ export default function PostCard(props) {
 
     const { post, fetchUpdate } = props
 
-    const {
+     const {
         id,
         creator,
         content,
         votesCount,
         commentsCount
-      } = post
+      } = post 
+console.log(post)
 
     const votePost = (e, vote) => {
         e.stopPropagation()
@@ -50,14 +51,14 @@ export default function PostCard(props) {
                     <button onClick={(e) => votePost(e, true)}>
                         <img src={vector1} alt="curtir" />
                     </button>
-                    <span>{votesCount}</span>
+                    <span>{post.likes}</span>
                     <button onClick={(e) => votePost(e, false)}>
                         <img src={vector2} alt="descurtir" />
                     </button>
                 </vote-info>
                 <comment-info>
-                    <img src={vector3} alt="curtir" />
-                    <span>{commentsCount}</span>
+                    <img src={vector3} alt="comentarios" />
+                    <span>{post.comments}</span>
                 </comment-info>
             </CardFooter>
         </CardContainer>

@@ -1,4 +1,4 @@
-import { HeaderStyled, CloseIcon, LogoImage, LogoutButton } from "./styled"
+import { HeaderStyled, CloseIcon, LogoImage, LogoutButton, LoginButton } from "./styled"
 import { goToPostsPage, goToLoginPage} from "../../routes/coordinator"
 import { useLocation, useNavigate } from "react-router-dom"
 import logo_pequeno from "../../assets/logo_pequeno.png"
@@ -18,10 +18,10 @@ export const Header = () => {
     const renderButtons = () => {
         switch (location.pathname) {
             case "/signup":
-                return <button onClick={() => goToLoginPage(navigate)}>Entrar</button>
+                return <LoginButton onClick={() => goToLoginPage(navigate)}>Entrar</LoginButton>
 
             case "/":
-                return <button onClick={deslogar}>Logout</button>
+                return <LogoutButton onClick={deslogar}>Logout</LogoutButton>
 
             default:
                 return (

@@ -7,9 +7,10 @@ export const goToSignupPage = (navigator) => {
 }
 
 export const goToCommentsPage = (navigator,postId) => {
-    navigator(`/posts/${postId}`)
+    navigator(`/comments/${postId}`)
 }
 
 export const goToPostsPage = (navigator) => {
-    navigator("/")
+    navigator("/posts")
   }
+

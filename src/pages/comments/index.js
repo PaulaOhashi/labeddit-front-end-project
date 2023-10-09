@@ -15,7 +15,6 @@ import {
 export const CommentsPage = () => {
     const navigate = useNavigate()
     const params = useParams()
-
     const [post, setPost] = useState(null)
     const [comments, setComments] = useState([])
     const [content, setContent] = useState("")
@@ -31,7 +30,7 @@ export const CommentsPage = () => {
       }, [])
 
     const fetchPost = () => {
-        const axiosConfig = {
+         const axiosConfig = {
           headers: {
             Authorization: window.localStorage.getItem(TOKEN_NAME)
           }
@@ -40,8 +39,9 @@ export const CommentsPage = () => {
         axios.get(BASE_URL + `/posts/${params.id}`, axiosConfig)
           .then(res => {
             setPost(res.data)
+            console.log(post)
           })
-          .catch(err => console.log(err))
+          .catch(err => console.log(err)) 
     }
 
     const fetchComments = () => {
@@ -51,7 +51,7 @@ export const CommentsPage = () => {
           }
         }
     
-        axios.get(BASE_URL + `/posts/${params.id}/comments`, axiosConfig)
+        axios.get(BASE_URL + `/comments/${params.id}`, axiosConfig)
           .then(res => {
             setComments(res.data)
           })
@@ -64,14 +64,14 @@ export const CommentsPage = () => {
         const body = {
           content: content
         }
-    
+        
         const axiosConfig = {
           headers: {
             Authorization: window.localStorage.getItem(TOKEN_NAME)
           }
         }
     
-        axios.post(BASE_URL + `/posts/${params.id}/comments`, body, axiosConfig)
+        axios.post(BASE_URL + `/comments/${params.id}`, body, axiosConfig)
           .then(res => {
             fetchPost()
             fetchComments()
@@ -79,14 +79,13 @@ export const CommentsPage = () => {
           })
           .catch(err => console.log(err))
       }
-    
+    console.log(post)
     
     return(
         <CenteredPageContainer>
             <Header />
-
             <PostsSection>
-                {post && <PostCard post={post} fetchUpdate={fetchPost} />}
+                {post && <PostCard post={post} fetchUpdate={fetchPost} />} 
             </PostsSection>
 
             <FormSection>

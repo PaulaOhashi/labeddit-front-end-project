@@ -33,11 +33,19 @@ export const LogoutButton = styled.button`
     outline: none;
     border: none;
 
-    &:last-child {
+     &:last-child {
       margin-left: auto;
-    }
+    } 
 
     &:hover {
       cursor: pointer;
     } 
+`
+
+export const LoginButton = styled.button`
+  display:flex;
+  justify-content:space-around;
+  padding:10px;
+
+  margin-left: auto;
 `
