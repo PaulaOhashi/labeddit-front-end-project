@@ -7,7 +7,13 @@ Projeto final do curso de desenvolvedor web full stack da Labenu. Trata-se de um
 beltrana@email.com
 beltrana00
 
-# Link do backend deployado 
+ciclano@email.com
+ciclano00
+
+# Link do front-end deployado
+https://labeddit-paula-ozemela.surge.sh/
+
+# Link do back-end deployado 
 https://labeddit-back-end-7kbj.onrender.com
 
 ## Autores
